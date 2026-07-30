@@ -73,6 +73,4 @@ CloudWatch Logs
 - Logging and monitoring
 - Scalable event-driven workflows
 
-## Author
 
-**Charan Chalasani**
