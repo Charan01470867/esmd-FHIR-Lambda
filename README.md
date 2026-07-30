@@ -1,18 +1,19 @@
-# ESMD FHIR Lambda
-
 ## Overview
 
-ESMD FHIR Lambda is a serverless AWS application designed to process healthcare document submissions using FHIR standards. The application validates metadata, processes incoming requests, and orchestrates document workflows through AWS cloud services.
+A serverless Python application that processes FHIR-based healthcare document workflows using AWS services. The solution validates incoming requests, orchestrates event-driven processing, and provides secure, scalable document handling.
 
 ## Features
 
 - FHIR document processing
 - Metadata validation
-- AWS Lambda based architecture
-- Secure document handling
+- Event-driven architecture
+- AWS Lambda integration
+- Amazon S3 document storage
+- Amazon SQS message processing
+- Amazon SNS notifications
+- CloudWatch monitoring
 - Error handling and logging
-- Cloud-native event processing
-- High-performance request processing
+- Configuration-driven deployment
 
 ## Technology Stack
 
@@ -22,14 +23,56 @@ ESMD FHIR Lambda is a serverless AWS application designed to process healthcare 
 - Amazon SQS
 - Amazon SNS
 - AWS CloudWatch
-- YAML Configuration
+- YAML
+- JSON
 
+## Architecture
+
+```text
+Client
+   │
+   ▼
+Amazon S3
+   │
+   ▼
+Amazon SQS
+   │
+   ▼
+AWS Lambda
+   │
+   ├── Metadata Validation
+   ├── FHIR Processing
+   ├── Business Logic
+   └── Error Handling
+   │
+   ▼
+Amazon SNS
+   │
+   ▼
+CloudWatch Logs
+```
+
+## Project Structure
+
+```text
+├── handlers/
+├── services/
+├── utils/
+├── yaml/
+├── config/
+├── requirements.txt
+└── README.md
+```
 
 ## Key Capabilities
 
-- Document validation
-- Metadata processing
-- Event-driven workflow
-- Logging and monitoring
+- Serverless document processing
+- Secure cloud integration
+- Metadata validation
 - Exception handling
-- Configuration-driven deployment
+- Logging and monitoring
+- Scalable event-driven workflows
+
+## Author
+
+**Charan Chalasani**
