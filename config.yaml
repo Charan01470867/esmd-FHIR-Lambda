@@ -1,0 +1,47 @@
+server:
+  base_url: "https://val.cpiapigateway.cms.gov/api/esmdf"
+  presigned_base_url: "https://val.cpiapigateway.cms.gov/api/esmdf/ext/v1/fhir"
+  timeout: 30
+  keep_alive: 120
+  strict_mode: true
+
+auth:
+  token_endpoint: "https://val.cpiapigateway.cms.gov/api/esmdf/ext/auth/generate"
+  client_id: ""
+  client_secret: ""
+  scope: "hih/esmdfhir"
+  grant_type: "client_credentials"
+  
+# AWS Secrets Manager
+secrets_manager_secret: "test/esmdfhir"       # CMS FHIR Auth
+secrets_manager_secret_loiss: "test/loisssecrets"  # Loiss S3 bucket credentials
+
+logging:
+  level: "INFO"
+  log_file: "fhir_server.log"
+  max_size: 10
+  max_age: 30
+  max_backups: 5
+  compress: true
+
+org:
+  oid: "urn:oid:2.16.840.1.113883.3.9618.4933.302"
+  name: "Digital HIE Inc.,"
+
+LoissS3Bucket:
+  S3_Bucket_Aws_Access_Key_Id: ""
+  S3_Bucket_Aws_Secret_Access_Key: ""
+  Region_Name: "us-east-1"
+  Loiss_S3_Bucket: "esmdautomation"
+  Response_Prefix: "JSONRESPONSES"
+  TXT_File: "REQUESTS/INFO"
+  PDF_File: "REQUESTS/FILES"
+  Request_Prefix: "REQUESTS"
+  Generated_XMLPath: "REQUESTS/GeneratedXML"
+  Processed_Files: "PROCESSED"
+  Transaction_Log: "LOISSTRANSACTIONSLOGS"
+  Errored_Files: "ERRORED"
+
+LoissExecution:
+  use_s3: true         # or false
+  use_temp_file: false  # or false

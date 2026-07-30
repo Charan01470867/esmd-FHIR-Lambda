@@ -1,0 +1,17 @@
+// Bundle Submission Client Flow
+digraph {
+	A [label="Initialize Client"]
+	B [label="Prepare Bundle"]
+	C [label="Submit Bundle"]
+	D [label="Handle Response"]
+	E [label="Log Success"]
+	F [label="Retry on Failure"]
+	G [label=End]
+	A -> B [label=Start]
+	B -> C [label="Bundle Created"]
+	C -> D [label="Bundle Submitted"]
+	D -> E [label="Response Success"]
+	D -> F [label="Response Failure"]
+	E -> G [label=Finish]
+	F -> B [label="Retry Submission"]
+}

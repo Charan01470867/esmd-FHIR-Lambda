@@ -1,0 +1,24 @@
+server:
+  base_url: "http://internal-esmd-dev-apps-986151145.us-east-1.elb.amazonaws.com:9012/fhir"
+  timeout: 30
+  keep_alive: 120
+  strict_mode: true
+
+auth:
+  token_endpoint: "https://val.cpiapigateway.cms.gov/api/esmdf/ext/auth/generate"
+  client_id: "2t8jageg3mgp57cla34r6o073s"
+  client_secret: "7ek7n8mbqkf010babv8dm3e531un26qreoqaa3jv7pghtpmgvnu"
+  scope: "hih/esmdfhir"
+  grant_type: "client_credentials"
+
+logging:
+  level: "INFO"
+  log_file: "fhir_server.log"
+  max_size: 10
+  max_age: 30
+  max_backups: 5
+  compress: true
+
+org:
+  oid: "urn:oid:2.16.840.1.113883.3.9618.4933.302"
+  name: "Digital HIE Inc.,"
